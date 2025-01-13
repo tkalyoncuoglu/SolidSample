@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ArdalisRating.Logger;
+using System;
 
 namespace ArdalisRating
 {
@@ -8,7 +9,7 @@ namespace ArdalisRating
         {
             Console.WriteLine("Ardalis Insurance Rating System Starting...");
 
-            var engine = new RatingEngine();
+            var engine = new RatingEngine(new ConsoleLogger());
             engine.Rate();
 
             if (engine.Rating > 0)
@@ -19,6 +20,7 @@ namespace ArdalisRating
             {
                 Console.WriteLine("No rating produced.");
             }
+            
 
         }
     }
